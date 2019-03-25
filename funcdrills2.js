@@ -36,3 +36,30 @@ function decode(str) {
     return ' ';
   } 
 }
+
+function playGame(choice) {
+  const randomNo = Math.floor(Math.random() * 3) + 1;
+  const enemy = randomNo;
+  if (choice === enemy) {
+    alert('It\'s a tie');
+  }
+  if(choice === 1 && enemy === 2) {
+    alert('You are the loser! Paper beats rock.');
+  }
+  if(choice === 1 && enemy === 3) {
+    alert('You are the winner! Rock beats scissors.');
+  }
+  if(choice === 2 && enemy === 1) {
+    alert('You are the winner! Paper beats rock.');
+  }
+  if(choice === 2 && enemy === 3) {
+    alert('You are the loser! Scissors beat paper.');
+  }
+  if(choice === 3 && enemy === 2) {
+    alert('You are the winner! Scissors beat paper.');
+  }
+  if(choice === 3 && enemy === 1) {
+    alert('You are the loser! Rock beats scissors.');
+  }
+  return `Player: ${choice}, Computer: ${enemy}`;
+}
