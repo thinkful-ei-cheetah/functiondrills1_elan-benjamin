@@ -17,3 +17,22 @@ function beyond(num) {
     console.log('Staying home');
   }
 }
+
+beyond(Infinity);
+
+function decode(str) {
+  if (str.length < 5) {
+    throw new Error('Please enter a five letter word');
+  }
+  if (str[0] === 'a') {
+    return str[1];
+  } else if (str[0] === 'b') {
+    return str[2];
+  } else if (str[0] === 'c') {
+    return str[3];
+  } else if (str[0] === 'd') {
+    return str[4];
+  } else {
+    return ' ';
+  } 
+}
