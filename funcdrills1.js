@@ -1,8 +1,11 @@
 'use strict';
 
 function createGreeting(name, age) {
+  if (!name || !age) {
+    throw new Error('Arguments not valid');
+  }
   const ageCalc = getYearofBirth(age);
-  return `Hi my name is Elan and I am ${ageCalc}`;
+  return `Hi my name is ${name} and I am ${ageCalc}`;
 }
 
 function getYearofBirth(age){
