@@ -37,6 +37,34 @@ function decode(str) {
   } 
 }
 
+'use strict';
+
+function getDays(month, leapYear) {
+  if (leapYear === true && month === 'February') {
+    return 29;
+  }
+
+  switch (month) {
+  case 'February':
+    return 28;
+  case 'April':
+  case 'June':
+  case 'September':
+  case 'November':
+    return 30;
+  case 'January':
+  case 'March':
+  case 'May':
+  case 'July':
+  case 'August':
+  case 'October':
+  case 'December':
+    return 31;
+  default:
+    throw new Error('Must provide a valid month.');
+  }
+}
+
 function playGame(choice) {
   const randomNo = Math.floor(Math.random() * 3) + 1;
   const enemy = randomNo;
